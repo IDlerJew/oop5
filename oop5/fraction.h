@@ -48,27 +48,27 @@ class fraction : public Pair
 		void setZnamen(unsigned short int zn);
 		/*
 		 * Оператор сложения
-		 * @param a <ссылка на объект-fraction>
+		 * @param a <ссылка на объект-Pair>
 		 * @return <указатель на fraction>
 		*/
 
 		Pair* operator+(const Pair* a);
 		/*
 		 * Оператор вычитания
-		 * @param a <ссылка на объект-fraction>
+		 * @param a <ссылка на объект-Pair>
 		 * @return <указатель на fraction>
 		*/
 		Pair* operator-(const Pair* a);
 		/*
 		 * Оператор умножения
 		 * перегрузка плюса
-		 * @param a <ссылка на объект-fraction>
+		 * @param  double& a
 		 * @return <указатель на fraction>
 		*/
 		Pair* operator*(double& a);
 		/*
 		 * Оператор деления
-		 * @param a <ссылка на объект-fraction>
+		 * @param double& a
 		 * @return <указатель на fraction>
 		*/
 		Pair* operator/(double& a);
@@ -83,9 +83,25 @@ class fraction : public Pair
 		 * @return <bool>
 		*/
 		bool operator==(fraction& a);
+		/* Оператор сравнения
+		 * @param a <ссылка на объект-fraction>
+		 * @return <bool>
+		*/
 		bool operator>(fraction& a);
+		/* Оператор сравнения
+		 * @param a <ссылка на объект-fraction>
+		 * @return <bool>
+		*/
 		bool operator>=(fraction& a);
+		/* Оператор сравнения
+		 * @param a <ссылка на объект-fraction>
+		 * @return <bool>
+		*/
 		bool operator<(fraction& a);
+		/* Оператор сравнения
+		 * @param a <ссылка на объект-fraction>
+		 * @return <bool>
+		*/
 		bool operator<=(fraction& a);
 
 
@@ -111,6 +127,16 @@ class fraction : public Pair
 		*/
 		friend std::ostream& operator<<(std::ostream& strm, fraction fract);
 	private:
+		/*
+		* Функция поиска максимального делителя 
+		* @param a-первое число
+		* @param b-первое число
+		* @return int NOD
+		*/
 		int MaxNod(int a, int b);
+		/*
+		* Функция создания неделимой дроби
+		* @return void
+		*/
 		void Normaldrob();
 	};

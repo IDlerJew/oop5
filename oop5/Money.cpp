@@ -34,14 +34,7 @@ void Money::Degres(double a, Money b) {
     chisl = b.Getruble() / a;
     Setkop(long(b.Getkop()) / a);
 }
-void Money::Degres(long a, Money b) {
-    double kop1 = ((double)b.Getruble() / a) - (long)((double)b.Getruble() / a); //считаем те самые копейки которые при делении будут
-    chisl = b.Getruble() / a;
-    Setkop((long(b.Getkop()) / a) + (long)(kop1 * 100)); // прибавляем и приводим и норме
-    //cout << (long(b.Getkop()) / a)<<endl;
-    //chisl = b.Getruble() / a;
-    //Setkop(long(b.Getkop()) / a);
-}
+
 
 void  Money::Sum(Money a, Money b) {
     chisl = (a.Getruble() + b.Getruble());
@@ -60,12 +53,7 @@ void Money::Minus(Money a, Money b) {
 
 }
 
-void Money::Cout() {
-    if ((long)znamen < 10) {
-        cout << chisl << "," << "0" << (long)znamen << endl;
-    }
-    else cout << chisl << "," << (long)znamen << endl;
-}
+
 
 bool Money::Sravn(Money b) {
 
